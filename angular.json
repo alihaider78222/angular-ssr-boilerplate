@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ssr-boilerplate",
+            "outputPath": "dist/angular-ssr-boilerplate/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -96,6 +96,60 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/angular-ssr-boilerplate/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false,
+              "vendorChunk": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "configurations": {
+            "development": {
+              "browserTarget": "angular-ssr-boilerplate:build:development",
+              "serverTarget": "angular-ssr-boilerplate:server:development"
+            },
+            "production": {
+              "browserTarget": "angular-ssr-boilerplate:build:production",
+              "serverTarget": "angular-ssr-boilerplate:server:production"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular-ssr-boilerplate:build:production",
+              "serverTarget": "angular-ssr-boilerplate:server:production"
+            },
+            "development": {
+              "browserTarget": "angular-ssr-boilerplate:build:development",
+              "serverTarget": "angular-ssr-boilerplate:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

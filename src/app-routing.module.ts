@@ -20,10 +20,10 @@ const routes: Routes = [
     CommonModule,
     BrowserModule,
     RouterModule.forRoot(routes, {
-      useHash: false,
-      scrollPositionRestoration: 'enabled',
-      initialNavigation : 'enabledBlocking'
-    })
+    useHash: false,
+    scrollPositionRestoration: 'enabled',
+    initialNavigation: 'enabledBlocking'
+})
   ],
   exports: [RouterModule]
 })

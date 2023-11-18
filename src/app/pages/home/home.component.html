@@ -1,6 +1,46 @@
-<h1>Blogs</h1>
 
-<!-- <div *ngIf="loading"> -->
+
+
+<!-- Blogs List -->
+<ng-container *ngIf="!blog_id">
+
+  <h1>Blogs</h1>
+
+  <!-- list -->
+  <ul class="blog-list">
+    <li *ngFor="let blog of blogs" class="card" >
+      <a routerLink="/{{blog.id}}" class="card-item">
+        <img class="card-img-top" [src]="blog?.photo_url" [alt]="blog?.title">
+        <div class="card-body">
+          <p class="card-text">{{blog?.title}}</p>
+        </div>
+      </a>
+    </li>
+  </ul>
+
+  <!-- No blogs found -->
+  <div class="text-center" *ngIf="loading == false && blogs.length == 0">
+    <h2> No blogs found 🙁</h2>
+  </div>
+
+</ng-container>
+
+
+<!-- Blog detail -->
+<ng-container *ngIf="blog_id">
+
+  <h1>{{blog_detail?.title}}</h1>
+
+  <div class="innerhtml" [innerHtml]="blog_detail?.content_html ?? '' ">
+  </div>
+
+  <!-- No blogs found -->
+  <div class="text-center my-5 py-5" *ngIf="loading == false && blog_detail == null">
+    <h2> No blog details found 🙁</h2>
+  </div>
+
+</ng-container>
+
 
 <!-- Loader -->
 <div class="text-center mt-5" *ngIf="loading" >
@@ -8,13 +48,3 @@
     <span class="sr-only">Loading...</span>
   </div>
 </div>
-
-<!-- Blogs list -->
-<ul class="blog-list">
-  <li *ngFor="let blog of blogs" class="card">
-    <img class="card-img-top" [src]="blog?.photo_url" [alt]="blog?.title">
-    <div class="card-body">
-      <p class="card-text">{{blog?.title}}</p>
-    </div>
-  </li>
-</ul>

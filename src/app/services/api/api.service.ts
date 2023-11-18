@@ -14,13 +14,11 @@ export class ApiService {
 
   // Get Blog posts
   async getBlogPosts() : Promise<any> {
-
     return new Promise( (resolve, reject)=> {
       return this.http.get( this.getBlogPosts_URL )
       // .pipe( map( data => new BlogsResponse(data) ) ) // for converting data into model class
       .subscribe({
           next: res => {
-              // this.cacheService.setCacheData(url, data, res);
               resolve(res);
           },
           error: error => {
@@ -31,4 +29,24 @@ export class ApiService {
       })
     });
   }
+
+  // Get Blog detail
+  async getBlogDetail(id: String) : Promise<any> {
+    return new Promise( (resolve, reject)=> {
+      return this.http.get( `${this.getBlogPosts_URL}/${id}` )
+      // .pipe( map( data => new BlogsDetail(data) ) ) // for converting data into model class
+      .subscribe({
+          next: res => {
+              resolve(res);
+          },
+          error: error => {
+              console.log(error);
+              reject(error);
+          },
+          complete(){},
+      })
+    });
+  }
+
+
 }

@@ -1,9 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
+.title{
+  color: white !important;
+}
+
 .content{
   align-items: unset !important;
 }
 
+.card {
+  border-radius: 1rem !important;
+}
 
 .blog-list {
   display: grid;
@@ -42,5 +49,23 @@
 @media only screen and (max-width: 480px) {
   .blog-item {
     max-width: 100%;
+  }
+}
+
+.card-item{
+  text-decoration: none;
+  color: black;
+
+  img{
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+.card-item:hover {
+  text-decoration: none;
+  color: black;
+
+  .card-body {
+    background: #dedfde;
+    border-radius: 0 0 1rem 1rem;
   }
 }

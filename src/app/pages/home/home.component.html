@@ -1,9 +1,20 @@
-<p>home works!</p>
+<h1>Blogs</h1>
 
+<!-- <div *ngIf="loading"> -->
 
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="https://placehold.co/600x400" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<!-- Loader -->
+<div class="text-center mt-5" *ngIf="loading" >
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
   </div>
 </div>
+
+<!-- Blogs list -->
+<ul class="blog-list">
+  <li *ngFor="let blog of blogs" class="card">
+    <img class="card-img-top" [src]="blog?.photo_url" [alt]="blog?.title">
+    <div class="card-body">
+      <p class="card-text">{{blog?.title}}</p>
+    </div>
+  </li>
+</ul>

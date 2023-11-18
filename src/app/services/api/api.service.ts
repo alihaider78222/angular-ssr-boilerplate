@@ -6,4 +6,29 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
+  readonly getBlogPosts_URL = `https://api.slingacademy.com/v1/sample-data/blog-posts`;
+
+  constructor(
+    private http: HttpClient,
+  ) { }
+
+  // Get Blog posts
+  async getBlogPosts() : Promise<any> {
+
+    return new Promise( (resolve, reject)=> {
+      return this.http.get( this.getBlogPosts_URL )
+      // .pipe( map( data => new BlogsResponse(data) ) ) // for converting data into model class
+      .subscribe({
+          next: res => {
+              // this.cacheService.setCacheData(url, data, res);
+              resolve(res);
+          },
+          error: error => {
+              console.log(error);
+              reject(error);
+          },
+          complete(){},
+      })
+    });
+  }
 }

@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+.content{
+  align-items: unset !important;
+}
+
+
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+  max-width: -webkit-fill-available;
+  margin: 0 auto;
+  padding: 1rem;
+  list-style: none;
+}
+
+.blog-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.blog-content {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 945px) {
+  /* .blog-list {
+    grid-template-columns: 1fr;
+  } */
+}
+
+@media only screen and (max-width: 768px) {
+  .blog-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .blog-item {
+    max-width: 100%;
+  }
+}

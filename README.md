@@ -2,6 +2,12 @@
 
 Angular 16 boilerplate project example for Server side rendering (SSR) and was generated with [Angular CLI](https://github.com/angular/angular-cli): 16.0.6, [node](https://nodejs.org/en): 18.10.0, npm 9.8.1
 
+## Demo
+
+<p style="text-align: center">
+  <img src="./gif/angular-ssr-example.gif" alt="Angular 16 Boilerplate Project example - Server Side Rendering (SSR) "  >
+</p>
+
 ## How to Use
 
 **Step 1:**
@@ -44,7 +50,7 @@ Now run
 npm run serve:ssr
 ```
 
-and your production build form `dist` folder will be served on node.js server and you can navigate to `http://localhost:4200/` (or your custom PORT) to view the app.
+and your production build form `dist` folder will be served on node.js server and you can navigate to `http://localhost:4200` OR `http://localhost:4000` (or your custom PORT) to view the app.
 
 ## Boilerplate features
 
@@ -130,6 +136,15 @@ const routes: Routes = [
   },
 ]
 ```
+
+### API used in this project?
+
+Puplic API used to fetch dummy blogs and its details and images are from
+
+```
+https://api.slingacademy.com/v1/sample-data/blog-posts
+```
+
 
 ### What is Angular hydration?
 

@@ -5,7 +5,7 @@ Angular 16 boilerplate project example for Server side rendering (SSR) and was g
 ## Demo
 
 <p style="text-align: center">
-  <img src="./gif/angular-ssr-example.gif" alt="Angular 16 Boilerplate Project example - Server Side Rendering (SSR) "  >
+  <img src="./gif/angular-ssr-example.gif" alt="Angular 16 Boilerplate Project example - Server Side Rendering (SSR)">
 </p>
 
 ## How to Use
@@ -139,7 +139,7 @@ const routes: Routes = [
 
 ### API used in this project?
 
-Puplic API used to fetch dummy blogs and its details and images are from
+Public API used to fetch dummy blogs and its details and images are from
 
 ```
 https://api.slingacademy.com/v1/sample-data/blog-posts
@@ -160,4 +160,4 @@ Checkout [wiki](https://github.com/alihaider78222/angular-ssr-boilerplate/wiki) 
 
 I will be happy to answer any questions that you may have on this approach, and if you want to lend a hand with the boilerplate then please feel free to submit an issue and/or pull request 🙂
 
-Again to note, this is is an example only. If you liked my work, don’t forget to ⭐ star the repo to show your support.
+Again to note, this is is an example only. If you liked my work, don’t forget to ⭐ star the repo to show your support. Your support means a lot 🌟

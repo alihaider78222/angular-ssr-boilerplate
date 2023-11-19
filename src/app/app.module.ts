@@ -5,6 +5,8 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { AppRoutingModule } from 'src/app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { provideClientHydration } from '@angular/platform-browser';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    provideClientHydration(),
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

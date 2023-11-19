@@ -22,6 +22,24 @@ Run in terminal
 
 - `ng add @nguniversal/express-engine`
 
+## Add Angular hydration
+
+Angular Hydration is the process that restores a server-side rendered application on the client.
+
+Without hydration, the browser would receive the server-rendered HTML, display it to the user, and then destroy and re-render the DOM when Angular initializes the client-side application. This could result in a visible UI flicker and negatively impact performance metrics like First Input Delay (FID) and Largest Contentful Paint (LCP).
+
+in `app.module.ts` add
+
+```</br>
+import { provideClientHydration } from '@angular/platform-browser';
+
+@NgModule({
+  providers: [
+    provideClientHydration(),
+  ],
+})
+```
+
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

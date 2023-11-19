@@ -1,6 +1,6 @@
 # Angular SSR Boilerplate Project
 
-A boiler plate project created in Angular for Server side rendering (SSR) and was generated with Angular CLI: 16.0.6, node: 18.10.0, npm 9.8.1
+A boiler plate project created in Angular for Server side rendering (SSR) and was generated with [Angular CLI](https://github.com/angular/angular-cli): 16.0.6, [node](https://nodejs.org/en): 18.10.0, npm 9.8.1
 
 ## Development server
 

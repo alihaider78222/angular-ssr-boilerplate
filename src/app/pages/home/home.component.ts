@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/services/api/api.service';
+import { SeoService } from 'src/app/services/seo/seo.service';
 
 @Component({
   selector: 'app-home',
@@ -19,7 +20,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private api : ApiService
+    private api : ApiService,
+    private seo : SeoService
   ){ }
 
   ngOnInit(): void {
@@ -30,7 +32,15 @@ export class HomeComponent implements OnInit {
       this.blog_id = params.get('id');
 
       if(this.blog_id == null){
+
+        // Setting SEO Meta tags
+        this.seo.updateMetaTags({
+          title :  'Blogs | Angular SSR Boilerplate',
+          description :  'List of all blogs',
+        });
+        // Load list of blogs
         this.loadBlogsList();
+
       } else {
         this.loadBlogDetail();
       }
@@ -57,11 +67,16 @@ export class HomeComponent implements OnInit {
       console.log(res);
       this.loading = false;
       this.blog_detail = res?.blog;
+
+      // Setting SEO Meta tags
+      this.seo.updateMetaTags({
+        title :  this.blog_detail?.title,
+        description :  this.blog_detail?.description,
+      });
+
     }).catch( error => {
       console.log(error);
       this.loading = false;
-
-      console.log(this.blog_detail);
     });
   }
 

@@ -214,3 +214,13 @@ svg#clouds {
     border-radius: 0 0 1rem 1rem;
   }
 }
+
+
+.blog-img{
+  border-radius: 8px;
+  box-shadow: 0 13px 27px -5px #32325d40, 0 8px 16px -8px #0000004d, 0 -6px 16px -6px #00000008;
+}
+
+.loader{
+  min-height: calc(100vh - 16rem) !important;
+}
